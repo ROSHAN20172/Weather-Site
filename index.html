@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Site</title>
+    <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+    <div class="search">
+        <input type="text" placeholder="Enter City Name" spellcheck="false">
+        <button>Search</button>
+    </div>
+
+    <div class="error">
+        <h3>Invalid City Name</h3>
+    </div>
+
+    <div class="weather">
+        <img src="img/rain.png" class="weather-icon">
+        <h1 class="temp">59.99 C</h1>
+        <h2 class="city">kathmandu, nepal</h2>
+        <h3 class="date">22, mar 2023</h3>
+    </div>
+
+    <div class="details">
+        <div class="col">
+            <img src="img/pressure.png">
+            <div class="pressure">
+                <p>32</p>
+                <p>Pressure</p>
+            </div>
+        </div>
+        <div class="col">
+            <img src="img/humidity.png">
+            <div class="humidity">
+                <p>53%</p>
+                <p>Humidity</p>
+            </div>
+        </div>
+        <div class="col">
+            <img src="img/wind.png">
+            <div class="wind">
+                <p>32km/hr</p>
+                <p>Wind Speed</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="weather.js"></script>
+</body>
+</html>
