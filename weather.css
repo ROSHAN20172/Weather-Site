@@ -35,8 +35,8 @@ body{
     margin-top: -10px;
 }
 .weather img{
-    margin-top: 150px;
-    margin-left: 100px;
+    margin-top: 50px;
+    margin-left: 80px;
 }
 .weather h1{
     font-weight: 1000;
@@ -60,29 +60,35 @@ body{
 .col{
     margin-left: 100px;
 }
-.details{
+.details {
     border: solid;
-    width: 65%;
-    margin-top: -12%;
-    margin-left: 33%;
+    width: 95%;
+    margin-top: 10px;
+    margin-left: 30px;
     color: lightcoral;
     background: linear-gradient(150deg, #5f2c82, #49a09d);
     display: flex;
     align-items: center;
-    justify-content: space-between;
-}
-.col{
+    justify-content: space-around; /* adjusted justify-content */
+  }
+  
+  .col {
     display: flex;
     text-align: left;
-    padding: 50px;
-    margin-left: -25px;
-}
-.col img{
+    padding: 20px; /* reduced padding */
+    margin-left: -20px; /* adjusted margin */
+  }
+  
+  .col img {
     width: 60px;
     margin-right: 15px;
-}
-.pressure, .humidity, .wind{
-    font-size: 25px;
+  }
+  
+  .pressure,
+  .humidity,
+  .wind,
+  .condition {
+    font-size: 30px;
     font-weight: 400;
     color: cyan;
-}
+  }

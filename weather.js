@@ -35,6 +35,8 @@ async function checkWeather(city){
     document.querySelector(".pressure").innerHTML = data.main.pressure + "<br>Pressure";
     document.querySelector(".humidity").innerHTML = data.main.humidity + "%" +"<br>Humidity";
     document.querySelector(".wind").innerHTML = data.wind.speed + " Km/h" +"<br>Wind Speed";
+    document.querySelector(".condition").innerHTML = data.weather[0].description + "<br>Condition";
+    document.querySelector(".conditionimg").innerHTML = `<img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png" alt="${data.weather[0].description}">`;
 
     if(data.weather[0].main == "Clouds"){
         weatherIcon.src = "img/clouds.png";
@@ -60,10 +62,6 @@ checkWeather(city);
 searchBtn.addEventListener("click", ()=>{
     checkWeather(searchBox.value);
 })
-
-
-
-
 
 
 
