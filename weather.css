@@ -35,8 +35,15 @@ body{
     margin-top: -10px;
 }
 .weather img{
-    margin-top: 50px;
+    margin-top: 30px;
     margin-left: 80px;
+}
+.weather h4{
+    font-size: 35px;
+    font-weight: 800;
+    margin-left: 140px;
+    margin-top: -10px;
+    color: coral;
 }
 .weather h1{
     font-weight: 1000;
@@ -61,34 +68,31 @@ body{
     margin-left: 100px;
 }
 .details {
-    border: solid;
-    width: 95%;
-    margin-top: 10px;
-    margin-left: 30px;
-    color: lightcoral;
-    background: linear-gradient(150deg, #5f2c82, #49a09d);
-    display: flex;
-    align-items: center;
-    justify-content: space-around; /* adjusted justify-content */
-  }
-  
-  .col {
-    display: flex;
-    text-align: left;
-    padding: 20px; /* reduced padding */
-    margin-left: -20px; /* adjusted margin */
-  }
-  
-  .col img {
-    width: 60px;
-    margin-right: 15px;
-  }
-  
-  .pressure,
-  .humidity,
-  .wind,
-  .condition {
-    font-size: 30px;
-    font-weight: 400;
-    color: cyan;
-  }
+  border: solid;
+  width: 95%;
+  margin-top: 10px;
+  margin-left: 30px;
+  color: lightcoral;
+  background: linear-gradient(150deg, #5f2c82, #49a09d);
+  display: flex;
+  align-items: center;
+  justify-content: space-around; /* adjusted justify-content */
+}
+
+.col {
+  display: flex;
+  text-align: left;
+  padding: 20px; /* reduced padding */
+  margin-left: -20px; /* adjusted margin */
+}
+
+.col img {
+  width: 60px;
+  margin-right: 15px;
+}
+
+.pressure, .humidity, .wind, .condition, .rainfall {
+  font-size: 25px;
+  font-weight: 400;
+  color: cyan;
+}
