@@ -27,34 +27,34 @@ async function checkWeather(city){
 
         console.log(data);
 
-        const options = { month: 'short', day: 'numeric', year: 'numeric' };
-        document.querySelector(".date").innerHTML = new Date().toLocaleDateString('en-US', options);
+        const options = { weekday: 'long', month: 'short', day: 'numeric', year: 'numeric' };
+        document.querySelector(".date").innerHTML = new Date().toLocaleDateString('en-US', options);
 
         document.querySelector(".temp").innerHTML = data.main.temp + "&deg;C";
         document.querySelector(".city").innerHTML = data.name + ", " + data.sys.country;
-        document.querySelector(".pressure").innerHTML = data.main.pressure + "<br>Pressure";
+        document.querySelector(".pressure").innerHTML = data.main.pressure + " hPa" + "<br>Pressure";
         document.querySelector(".humidity").innerHTML = data.main.humidity + "%" +"<br>Humidity";
         document.querySelector(".wind").innerHTML = data.wind.speed + " Km/h" +"<br>Wind Speed";
         document.querySelector(".icon-name").innerHTML = data.weather[0].main;
-        document.querySelector(".rainfall").innerHTML = data.rain ? data.rain["1h"] + " mm/h"+"<br>Rainfall" : "N/A"+"<br>Rainfall"; // Check if "rain" property exists in the response and display the rainfall data if available
+        document.querySelector(".rainfall").innerHTML = data.rain ? data.rain["1h"] + " mm/h"+"<br>Rainfall" : "N/A"+"<br>Rainfall";
 
         document.querySelector(".condition").innerHTML = data.weather[0].description + "<br>Condition";
         document.querySelector(".conditionimg").innerHTML = `<img src="http://openweathermap.org/img/w/${data.weather[0].icon}.png" alt="${data.weather[0].description}">`;
 
         if(data.weather[0].main == "Clouds"){
-            weatherIcon.src = "img/clouds.png";
+            weatherIcon.src = "Roshan Kumar Sah_2329235_Clouds.png";
         }
         else if(data.weather[0].main == "Clear"){
-            weatherIcon.src = "img/clear.png";
+            weatherIcon.src = "Roshan Kumar Sah_2329235_Clear.png";
         }
         else if(data.weather[0].main == "Rain"){
-            weatherIcon.src = "img/rain.png";
+            weatherIcon.src = "Roshan Kumar Sah_2329235_Rain.png";
         }
         else if(data.weather[0].main == "Drizzle"){
-            weatherIcon.src = "img/drizzle.png";
+            weatherIcon.src = "Roshan Kumar Sah_2329235_Drizzle.png";
         }
         else if(data.weather[0].main == "Mist"){
-            weatherIcon.src = "img/mist.png";
+            weatherIcon.src = "Roshan Kumar Sah_2329235_Mist.png";
         }
         document.querySelector(".error").style.display = "none";
     }  
