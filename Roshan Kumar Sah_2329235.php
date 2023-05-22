@@ -4,86 +4,85 @@
 	<meta charset="utf-8">
 	<title>Previous Week Weather</title>
 	<style>
-		body {
-			font-family: Arial, sans-serif;
-			background-color: #f2f2f2;
-			margin: 0;
-			padding: 0;
-		}
-		h1 {
-			text-align: center;
-			margin-top: 30px;
-		}
-		form {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			margin-top: 30px;
-		}
-		input[type="text"] {
-			padding: 10px;
-			font-size: 16px;
-			border: none;
-			border-radius: 5px;
-			margin-right: 10px;
-			outline: none;
-		}
-		input[type="submit"] {
-			padding: 10px;
-			font-size: 16px;
-			background-color: #4CAF50;
-			color: white;
-			border: none;
-			border-radius: 5px;
-			cursor: pointer;
-		}
-		table {
-			margin-top: 50px;
-			margin-left: auto;
-			margin-right: auto;
-			border-collapse: collapse;
-			width: 80%;
-			background-color: white;
-			box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-		}
-		th, td {
-			padding: 10px;
-			text-align: center;
-			border: 1px solid #ddd;
-			font-size: 16px;
-		}
-		th {
-			background-color: #4CAF50;
-			color: white;
-		}
-		img {
-			height: 50px;
-			width: 50px;
-		}
-	    .homepage {
-	      display: flex;
-	      justify-content: center;
-	      margin-top: 20px;
-	    }
-	    .homepage button {
-	      padding: 12px 20px;
-	      background-color: red;
-	      color: #ffffff;
-	      border: none;
-	      border-radius: 5px;
-	      font-size: 18px;
-	      text-decoration: none;
-	      cursor: pointer;
-	      transition: background-color 0.3s ease;
-	    }
-	    .homepage button:hover {
-	      background-color: darkred;
-	    }
-	    .homepage button a {
-	      color: inherit;
-	      text-decoration: none;
-	    }
-	</style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+    }
+    form {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    input[type="text"] {
+      padding: 12px;
+      font-size: 18px;
+      border: none;
+      border-radius: 5px;
+      margin-right: 10px;
+      outline: none;
+    }
+    input[type="submit"] {
+      padding: 12px 20px;
+      font-size: 18px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    table {
+      margin: 30px auto;
+      border-collapse: collapse;
+      width: 90%;
+      background-color: white;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+    th,
+    td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ddd;
+      font-size: 16px;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    img {
+      height: 40px;
+      width: 40px;
+    }
+    .homepage {
+      display: flex;
+      justify-content: center;
+      margin-top: 20px;
+    }
+    .homepage button {
+      padding: 12px 20px;
+      background-color: red;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .homepage button:hover {
+      background-color: darkred;
+    }
+    .homepage button a {
+      color: inherit;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
 
@@ -159,6 +158,7 @@ $sql = "SELECT * FROM weather WHERE `city`='$city_name' ORDER BY `date` DESC LIM
 $result = mysqli_query($conn, $sql);
 
 // Display the weather data in an HTML table
+echo "<h1>Weather In {$city} (Last 7 Days Record)</h1>";
 echo "<table border='1'>";
 echo "<tr>";
 echo "<th>Date</th>";
@@ -177,6 +177,7 @@ while ($row = mysqli_fetch_assoc($result)) {
   $date = date('Y-m-d', strtotime($row['date']));
   $condition = $row['condition'];
   $icon = $row['icon'];
+  $wind_speed = $row['pressure'];
   $temperature = $row['temperature'];
   $humidity = $row['humidity'];
   $wind_speed = $row['wind_speed'];
